@@ -1102,7 +1102,7 @@ p {
 
      color: #666;
 
-     max-width: 700px;
+     max-width: 800px;
 
      margin-bottom: 2rem;
     font-size: 0.8rem;
@@ -1111,8 +1111,8 @@ p {
   }
 
    .hero .hero-content .hero-tags {
-   font-family: 'Courier New', Courier, monospace;
-   font-weight: 500;
+    font-family:  Courier, monospace;
+   
       color: #666;
   
       display: flex;
@@ -1893,7 +1893,7 @@ h3{
 
   color: #666;
 
-  max-width: 600px;
+  max-width: 720px;
 
   margin: 0 auto 3rem;
 }
@@ -1902,8 +1902,8 @@ h3{
 .hero-tags {
 
   display: flex;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 500;
+  font-family:  Courier, monospace;
+  
 
   flex-wrap: wrap;
 
@@ -1911,7 +1911,7 @@ h3{
 
   gap: 0.8rem;
 
-  margin-bottom: 2.7rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero-tags span {
