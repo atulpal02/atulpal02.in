@@ -1081,6 +1081,11 @@ p {
 
 
   }
+  .hero-content {
+  margin-bottom: 3rem;
+
+  max-width: 900px;
+}
 
   .hero .hero-content h1{
     font-size: 2.5rem;
@@ -1858,7 +1863,7 @@ h3{
 
 /* CONTENT */
 .hero-content {
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 
   max-width: 900px;
 }
@@ -1907,10 +1912,12 @@ h3{
 .hero-tags {
 
   display: flex;
-  font-family: Courier, monospace;
+  
+
+  
   font-color: #070000;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   
 
   flex-wrap: wrap;
