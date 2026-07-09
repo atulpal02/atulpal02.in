@@ -1078,6 +1078,8 @@ p {
 
     margin-top: 1rem;
 
+
+
   }
 
   .hero .hero-content h1{
@@ -1111,7 +1113,8 @@ p {
   }
 
    .hero .hero-content .hero-tags {
-    font-family:  Courier, monospace;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 500;
    
       color: #666;
   
@@ -1855,11 +1858,13 @@ h3{
 
 /* CONTENT */
 .hero-content {
+  margin-bottom: 3rem;
 
-  max-width: 850px;
+  max-width: 900px;
 }
 
 .hero-label {
+  top-margin: 0.5rem;
 
   font-size: 0.9rem;
 
@@ -1886,14 +1891,14 @@ h3{
 
 .hero-description {
 
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-family: "IBM Plex Mono", monospace;
 
   line-height: 1.3;
 
   color: #666;
 
-  max-width: 720px;
+  max-width: 800px;
 
   margin: 0 auto 3rem;
 }
@@ -1902,16 +1907,19 @@ h3{
 .hero-tags {
 
   display: flex;
-  font-family:  Courier, monospace;
+  font-family: Courier, monospace;
+  font-color: #070000;
+  font-weight: 500;
+  font-size: 1.5rem;
   
 
   flex-wrap: wrap;
 
   justify-content: center;
 
-  gap: 0.8rem;
+  gap: 0.5rem;
 
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .hero-tags span {
