@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Articles</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="css/utilities.css"
+  />
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="container">
+
+      <h1 id="logo">
+        <a href="index.html">
+          <img
+            src="./assets/Atul-logo.png"
+            alt="Logo"
+          />
+        </a>
+      </h1>
+
+      <ul class="nav-menu">
+
+        <li>
+          <a
+            class="nav-link"
+            href="index.html#projects"
+          >
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="nav-link"
+            href="contact.html"
+          >
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="nav-link"
+            href="blog.html"
+          >
+            Articles
+          </a>
+        </li>
+
+        <li>
+        <a
+          class="nav-link btn btn-primary"
+          href="https://drive.google.com/file/d/1USvsuI9Z3_eEk0ceNhCf0lgto0pT-I8w/view?usp=sharing"
+          target="_blank"
+        >
+          <i class="fas fa-file-alt"></i> Resume
+        </a>
+      </li>
+
+      <div class="theme-switch">
+        <input type="checkbox" id="switch" />
+        <label class="toggle-icons" for="switch">
+          <img class="moon" src="assets/moon.svg" />
+          <img class="sun" src="assets/sun.svg" />
+        </label>
+      </div>
+
+      </ul>
+
+      <div class="hamburger">
+
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+<section class="contact-page">
+  <div class="container">
+    <div class="blog-hero">
+
+      <span class="blog-label">
+        All Articles
+      </span>
+
+      <h1>
+        Experiences,
+        <br>
+        Systems & Lessons.
+      </h1>
+
+      <p>
+        Documenting real lessons from building distributed systems,
+        interviews, scalable architecture,
+        and building products that survive real-world constraints.
+      </p>
+
+    </div>
+
+    <div
+      id="blog-container"
+      class="blog-grid"
+    ></div>
+    <div class="blog-actions">
+
+  <a
+    href="https://medium.com/@atulpal02"
+    target="_blank"
+    class="view-all-btn"
+  >
+    View All Articles →
+  </a>
+
+</div>
+
+  </section>
+
+    <footer id="footer">
+      <div class="container">
+        <!-- <a href="mailto:iatulpal02@gmail.com"> iatulpal02@gmail.com</a> -->
+        <!-- Social links -->
+                 <p>Copyright &copy; Atul Pal <span id="datee"></span>. All rights reserved.</p>
+
+        <div class="social">
+          <!-- <a href="https://www.instagram.com/atulpal02/" target="_blank"
+            ><img src="./assets/instagram-icon.svg" alt="Instagram"
+          /></a> -->
+          <a href="https://x.com/atulpal02" target="_blank"><img src="./assets/twitter-icon.svg" alt="Twitter" /></a>
+          <a href="https://www.linkedin.com/in/atulpal02/" target="_blank"
+            ><img src="./assets/linkedin-icon.svg" alt="Linkedin"
+          /></a>
+          <a href="https://github.com/atulpal02/atulpal02" target="_blank"><img src="./assets/github-icon.svg" alt="GitHub" /></a>
+          <!-- <a href="https://leetcode.com/u/atulpal02/" target="_blank"
+            ><img src="./assets/hashnode-icon.svg" alt="Hashnode"
+          /></a> -->
+        </div>
+        <!-- Attribution -->
+        <div class="attribution">
+          <!-- <a
+            href="https://leetcode.com/u/atulpal02/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+           <img
+              src="https://user-images.githubusercontent.com/62628408/157202263-9174da24-b19a-4017-9b7c-a1d26ae8f014.svg"
+              alt="attribution"
+              width="150px"
+            />
+          </a> -->
+        </div>
+      </div>
+    </footer>
+
+  <script>
+
+    async function loadBlogs() {
+
+      const rssUrl =
+        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@atulpal02";
+
+      const response =
+        await fetch(rssUrl);
+
+      const data =
+        await response.json();
+
+      const container =
+        document.getElementById("blog-container");
+
+      data.items
+        .slice(0, 6)
+        .forEach((blog) => {
+
+          const plainText =
+            blog.description
+              .replace(/<[^>]+>/g, "")
+              .slice(0, 140);
+
+          const date =
+            new Date(blog.pubDate)
+              .toLocaleDateString(
+                "en-US",
+                {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric"
+                }
+              );
+
+          container.innerHTML += `
+
+            <div class="blog-card">
+
+              <div class="blog-date">
+                ${date}
+              </div>
+
+              <h3>
+                ${blog.title}
+              </h3>
+
+              <p>
+                ${plainText}
+              </p>
+
+              <a
+                href="${blog.link}"
+                target="_blank"
+              >
+                Read Article →
+              </a>
+
+            </div>
+
+          `;
+        });
+    }
+
+    loadBlogs();
+
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
